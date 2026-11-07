@@ -1,0 +1,85 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function teacher() {
+      return request.auth != null &&
+        request.auth.uid == 'SquvTv7Cq2cOn31ABNEZYCgxkyY2' &&
+        request.auth.token.email == 'mona1986chem@gmail.com';
+    }
+    function student() {
+      return request.auth != null &&
+        request.auth.token.firebase.sign_in_provider == 'anonymous';
+    }
+    function validTopic(g, topic) {
+      return (g == '1' && topic in ['numbers','addition','subtraction','shapes','mixed','game_speed','game_memory','game_sort','practice_remedial','practice_enrichment']) ||
+        (g == '2' && topic in ['place','addition','subtraction','life','mixed','game_speed','game_memory','game_sort','practice_remedial','practice_enrichment']) ||
+        (g == '3' && topic in ['multiply','division','fractions','geometry','mixed','game_speed','game_memory','game_sort','practice_remedial','practice_enrichment']);
+    }
+    // No public teacher-admin list or editable role documents.
+    match /teacher_admins/{uid} { allow read, write: if false; }
+    match /questions/{id} {
+      allow read: if true;
+      allow create, update: if teacher() &&
+        request.resource.data.keys().hasOnly(['grade','topic','text','answers','correct','why','visual']) &&
+        request.resource.data.keys().hasAll(['grade','topic','text','answers','correct','why','visual']) &&
+        request.resource.data.grade in ['1','2','3'] &&
+        validTopic(request.resource.data.grade,request.resource.data.topic) &&
+        request.resource.data.text is string && request.resource.data.text.size() >= 3 && request.resource.data.text.size() <= 240 &&
+        request.resource.data.answers is list && request.resource.data.answers.size() == 4 &&
+        request.resource.data.answers[0] is string && request.resource.data.answers[0].size() <= 65 &&
+        request.resource.data.answers[1] is string && request.resource.data.answers[1].size() <= 65 &&
+        request.resource.data.answers[2] is string && request.resource.data.answers[2].size() <= 65 &&
+        request.resource.data.answers[3] is string && request.resource.data.answers[3].size() <= 65 &&
+        request.resource.data.correct in request.resource.data.answers &&
+        request.resource.data.why is string && request.resource.data.why.size() <= 240 &&
+        request.resource.data.visual is string && request.resource.data.visual.size() <= 120;
+      allow delete: if teacher();
+    }
+    match /attempts/{id} {
+      allow read: if teacher();
+      allow create: if student() &&
+        request.resource.data.keys().hasOnly(['name','grade','topic','score','total','kind','detail','date','certificate','studentUid','createdAt']) &&
+        request.resource.data.keys().hasAll(['name','grade','topic','score','total','kind','detail','date','certificate','studentUid','createdAt']) &&
+        request.resource.data.studentUid == request.auth.uid &&
+        request.resource.data.name is string &&
+        request.resource.data.name.size() >= 2 && request.resource.data.name.size() <= 80 &&
+        request.resource.data.grade in ['1','2','3'] &&
+        validTopic(request.resource.data.grade, request.resource.data.topic) &&
+        request.resource.data.kind in ['quiz','game','practice'] &&
+        ((request.resource.data.kind == 'practice' && request.resource.data.topic in ['practice_remedial','practice_enrichment']) ||
+         (request.resource.data.kind == 'game' && request.resource.data.topic in ['game_speed','game_memory','game_sort']) ||
+         (request.resource.data.kind == 'quiz' && !(request.resource.data.topic in ['practice_remedial','practice_enrichment','game_speed','game_memory','game_sort']))) &&
+        request.resource.data.score is int &&
+        request.resource.data.total is int &&
+        request.resource.data.total in [6,8] &&
+        request.resource.data.score >= 0 &&
+        request.resource.data.score <= request.resource.data.total &&
+        request.resource.data.detail is string && request.resource.data.detail.size() <= 120 &&
+        request.resource.data.date is string && request.resource.data.date.size() <= 32 &&
+        request.resource.data.certificate is bool &&
+        request.resource.data.certificate == (request.resource.data.kind == 'quiz') &&
+        request.resource.data.createdAt == request.time;
+      allow update, delete: if teacher();
+    }
+    // Educational library: viewable by students, editable only by authorized teachers.
+    match /learning_resources/{id} {
+      allow read: if true;
+      allow create, update: if teacher() &&
+        request.resource.data.keys().hasOnly(['grade','kind','title','description','url']) &&
+        request.resource.data.keys().hasAll(['grade','kind','title','description','url']) &&
+        request.resource.data.grade in ['1','2','3'] &&
+        request.resource.data.kind in ['remedial','enrichment','video'] &&
+        request.resource.data.title is string &&
+        request.resource.data.title.size() >= 3 && request.resource.data.title.size() <= 110 &&
+        request.resource.data.description is string &&
+        request.resource.data.description.size() >= 3 && request.resource.data.description.size() <= 240 &&
+        request.resource.data.url is string &&
+        request.resource.data.url.size() >= 9 && request.resource.data.url.size() <= 1800 &&
+        request.resource.data.url.matches('https://.*');
+      allow delete: if teacher();
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

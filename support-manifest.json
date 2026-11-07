@@ -1,0 +1,194 @@
+[
+  {
+    "grade": "1",
+    "kind": "remedial",
+    "title": "قطار الأعداد والألوان",
+    "description": "تتبّع الأعداد، لوّن وعدّ، ثم صل بين العدد والمجموعة.",
+    "url": "worksheets/support/grade-1-remedial-1.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "1",
+    "kind": "remedial",
+    "title": "سلال الجمع والطرح",
+    "description": "شاهد المجموعات، واشطبي الزائد، ثم تحرّكي على خط الأعداد.",
+    "url": "worksheets/support/grade-1-remedial-2.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "1",
+    "kind": "enrichment",
+    "title": "محقق الأنماط",
+    "description": "توقّع الشكل التالي، اكتشف القاعدة، وابحثي عن الخطأ.",
+    "url": "worksheets/support/grade-1-enrichment-1.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "1",
+    "kind": "enrichment",
+    "title": "متجر الألعاب الصغيرة",
+    "description": "اختر ألعابًا، جرّبي أكثر من حل، ثم اصنعي مسألتك.",
+    "url": "worksheets/support/grade-1-enrichment-2.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "2",
+    "kind": "remedial",
+    "title": "بيت الآحاد والعشرات",
+    "description": "ابني العدد بصريًا، ثم صل صورته بالصيغة العددية.",
+    "url": "worksheets/support/grade-2-remedial-1.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "2",
+    "kind": "remedial",
+    "title": "ورشة العمليات الحسابية",
+    "description": "رتّب المنازل، واكتشف الخطأ، ثم اختر العملية المناسبة.",
+    "url": "worksheets/support/grade-2-remedial-2.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "2",
+    "kind": "enrichment",
+    "title": "لغز الرقم السرّي",
+    "description": "حلّ قرائن العدد، وابحثي عن بدائل، واكسري الشفرة.",
+    "url": "worksheets/support/grade-2-enrichment-1.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "2",
+    "kind": "enrichment",
+    "title": "مهمة الوقت والميزانية",
+    "description": "خططي لشراء الأدوات، وارسم الساعة، وفسّري حسابك.",
+    "url": "worksheets/support/grade-2-enrichment-2.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "3",
+    "kind": "remedial",
+    "title": "حديقة صفوف الضرب",
+    "description": "عدّ الصفوف والمجموعات، وصلها بحقيقة الضرب.",
+    "url": "worksheets/support/grade-3-remedial-1.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "3",
+    "kind": "remedial",
+    "title": "قسمة عادلة وكسور ملوّنة",
+    "description": "وزّعي بالتساوي، ثم ظلّلي أجزاء من الكل.",
+    "url": "worksheets/support/grade-3-remedial-2.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "3",
+    "kind": "enrichment",
+    "title": "مهمة متحف الأعداد",
+    "description": "خططي للحل على مرحلتين، وفتشي عن كل الاحتمالات.",
+    "url": "worksheets/support/grade-3-enrichment-1.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "3",
+    "kind": "enrichment",
+    "title": "استوديو الكسور والهندسة",
+    "description": "صمّمي وحلّلي وفسّري دون الاقتصار على الناتج.",
+    "url": "worksheets/support/grade-3-enrichment-2.pdf",
+    "builtIn": true
+  },
+  {
+    "grade": "1",
+    "kind": "remedial",
+    "title": "أصدقاء العدد عشرة",
+    "description": "كوّن العدد ١٠ بالجمع والبطاقات.",
+    "interactiveId": "1r3",
+    "builtIn": true
+  },
+  {
+    "grade": "1",
+    "kind": "remedial",
+    "title": "سلّم العد والمقارنة",
+    "description": "رتب الأعداد حتى عشرين وأكملها.",
+    "interactiveId": "1r4",
+    "builtIn": true
+  },
+  {
+    "grade": "1",
+    "kind": "enrichment",
+    "title": "متحف الأشكال العجيبة",
+    "description": "ألغاز الأشكال والأنماط.",
+    "interactiveId": "1e3",
+    "builtIn": true
+  },
+  {
+    "grade": "1",
+    "kind": "enrichment",
+    "title": "شفرة الأعداد السرية",
+    "description": "اكتشف أنماطًا وأعدادًا مخفية.",
+    "interactiveId": "1e4",
+    "builtIn": true
+  },
+  {
+    "grade": "2",
+    "kind": "remedial",
+    "title": "قفزات على خط الأعداد",
+    "description": "جمع وطرح العشرات بالقفز.",
+    "interactiveId": "2r3",
+    "builtIn": true
+  },
+  {
+    "grade": "2",
+    "kind": "remedial",
+    "title": "الوقت والنقود",
+    "description": "تدريبات على الساعة والشراء.",
+    "interactiveId": "2r4",
+    "builtIn": true
+  },
+  {
+    "grade": "2",
+    "kind": "enrichment",
+    "title": "مدينة الألغاز الحسابية",
+    "description": "حل مسائل فيها خطوتان.",
+    "interactiveId": "2e3",
+    "builtIn": true
+  },
+  {
+    "grade": "2",
+    "kind": "enrichment",
+    "title": "مختبر القياس الصغير",
+    "description": "اكتشف السعة والقياس والأطوال.",
+    "interactiveId": "2e4",
+    "builtIn": true
+  },
+  {
+    "grade": "3",
+    "kind": "remedial",
+    "title": "جسور القسمة",
+    "description": "توزيع المجموعات بالتساوي.",
+    "interactiveId": "3r3",
+    "builtIn": true
+  },
+  {
+    "grade": "3",
+    "kind": "remedial",
+    "title": "بيت الكسور الملونة",
+    "description": "قارن الكسور والأجزاء.",
+    "interactiveId": "3r4",
+    "builtIn": true
+  },
+  {
+    "grade": "3",
+    "kind": "enrichment",
+    "title": "مهندس المساحات",
+    "description": "حل ألغاز المحيط والمساحة.",
+    "interactiveId": "3e3",
+    "builtIn": true
+  },
+  {
+    "grade": "3",
+    "kind": "enrichment",
+    "title": "سوق المسائل الذكية",
+    "description": "مواقف بيع وشراء وضرب وقسمة.",
+    "interactiveId": "3e4",
+    "builtIn": true
+  }
+]
